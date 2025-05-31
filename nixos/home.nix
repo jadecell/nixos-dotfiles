@@ -51,15 +51,15 @@
 	rb = "sudo nixos-rebuild switch --flake ~/mysystem/#";
         v = "nvim";
         mn = "cd ~/mysystem/nixos";
+        lg = "lazygit";
   };
 
-  programs.bash = {
-	enable = true;
-	profileExtra = "[ \"$(tty)\" = \"/dev/tty1\" ] && ! pidof -s Hyprland >/dev/null 2>&1 && exec Hyprland";
-  };
+	#  programs.bash = {
+	# enable = true;
+	# profileExtra = "[ \"$(tty)\" = \"/dev/tty1\" ] && ! pidof -s Hyprland >/dev/null 2>&1 && exec Hyprland";
+	#  };
 
-#programs.sway.enable = true;
-        #wayland.windowManager.hyprland.enable = true;
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 

@@ -15,9 +15,17 @@
             languages = {
                 enableTreesitter = true;
                 nix.enable = true;
+                bash = {
+                        enable = true;
+                        lsp.enable = true;
+                        extraDiagnostics.enable = true;
+                };
             }; 
 
-            lsp.enable = true;
+            lsp = {
+                enable = true;
+                trouble.enable = true;
+            }; 
             statusline.lualine.enable = true;
             autocomplete.nvim-cmp.enable = true;
             clipboard = {
@@ -30,6 +38,9 @@
                 enable = true;
                 setupOpts.filetypes = { "*" = { };};
             };
+            
+
+            visuals.indent-blankline.enable = true;
 
             autopairs.nvim-autopairs.enable = true;
         };

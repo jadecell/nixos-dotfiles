@@ -4,7 +4,7 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim
     alacritty
     kitty
     pcmanfm
@@ -24,5 +24,12 @@
     waypaper
     libreoffice-fresh
     rmpc
+    lazygit
+
+    # Bash scripts
+    inputs.bin.packages.${system}.extract
+    inputs.bin.packages.${system}.musicimport
+    inputs.bin.packages.${system}.wallsort
+    inputs.bin.packages.${system}.update-system
   ];
 }

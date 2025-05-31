@@ -21,6 +21,8 @@
         inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    bin.url = "github:jadecell/bin";
+
   };
 
   outputs = {
@@ -29,6 +31,7 @@
     hyprpanel,
     home-manager,
     nvf,
+    bin,
     zen-browser,
     ...
   } @ inputs: let
@@ -41,7 +44,7 @@
   in {
     nixosConfigurations = {
       rune = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs system;};
+        specialArgs = {inherit inputs system; };
         modules = [
           ./nixos/configuration.nix
           nvf.nixosModules.default

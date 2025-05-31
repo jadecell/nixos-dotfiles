@@ -30,9 +30,12 @@
     users = {
       jackson = import ./home.nix;
     };
+
+    backupFileExtension = "hm-backup";
   };
 
-        programs.sway.enable = true;
+
+  programs.sway.enable = true;
 
   # enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];

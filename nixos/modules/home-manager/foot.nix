@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, lib, inputs, nix-colors, ... }:
 
 {
   programs.foot = {
@@ -15,6 +15,7 @@
               };
         colors = {
             alpha = 0.9;
+
             foreground = "ebdbb2";
             background = "282828";
 
@@ -37,6 +38,8 @@
                 bright5 = "cc00ff";
                 bright6 = "00ffff";
                 bright7 = "ffffff";
+
+
             # regular0 = "011627";
             # regular1 = "ef5350";
             # regular2 = "22da6e";

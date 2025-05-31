@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, lib, inputs, nix-colors, ... }:
 
 {
         # Options go here

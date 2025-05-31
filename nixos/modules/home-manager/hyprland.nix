@@ -42,11 +42,13 @@
                 "vibrancy" = "0.1696";
         };
      };
-     # misc = {
-     #    "enable_swallow" = "true";
-     #    "swallow_regex" = "^(Alacritty|kitty|footclient)$";
-     # };
-     # xwayland = { "force_zero_scaling" = "true"; };
+
+     misc = {
+        "enable_swallow" = "true";
+        "swallow_regex" = "^(Alacritty|kitty|footclient)$";
+     };
+
+     xwayland = { "force_zero_scaling" = "true"; };
 
      bind = [
     	"$mod, w, exec, $browser"
@@ -56,6 +58,7 @@
 
 	"$mod SHIFT, q, exit"
         "$mod, v, togglefloating"
+        "$mod, u, exec, $terminal -e update-system"
         "$mod, m, exec, $terminal -e $music"
         "$mod, F1, exec, waypaper"
         "$mod CONTROL SHIFT, escape, exec, $terminal -e sudo shutdown now" 
@@ -66,6 +69,9 @@
         "$mod, l, movefocus, r"
         "$mod, k, movefocus, u"
         "$mod, j, movefocus, d"
+
+        "$mod SHIFT, h, splitratio, -0.05"
+        "$mod SHIFT, l, splitratio, 0.05"
 
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
