@@ -1,21 +1,26 @@
-{ config, pkgs, system, inputs, ... }:
-
 {
-	imports = [
-                inputs.hyprpanel.homeManagerModules.hyprpanel
+  config,
+  pkgs,
+  system,
+  inputs,
+  ...
+}: {
+  imports = [
+    inputs.hyprpanel.homeManagerModules.hyprpanel
 
-                ./modules/home-manager/mpd.nix                
-                ./modules/home-manager/hyprland.nix                
-                ./modules/home-manager/hyprpanel.nix                
-                ./modules/home-manager/wofi.nix                
-                ./modules/home-manager/ncmpcpp.nix                
-                ./modules/home-manager/foot.nix                
-                ./modules/home-manager/zsh.nix                
-                ./modules/home-manager/starship.nix                
-                ./modules/home-manager/git.nix                
-        ];
+    ./modules/home-manager/mpd.nix
+    ./modules/home-manager/hyprland.nix
+    ./modules/home-manager/hyprpanel.nix
+    ./modules/home-manager/wofi.nix
+    ./modules/home-manager/ncmpcpp.nix
+    ./modules/home-manager/foot.nix
+    ./modules/home-manager/zsh.nix
+    ./modules/home-manager/starship.nix
+    ./modules/home-manager/git.nix
+    ./modules/home-manager/kitty.nix
+  ];
 
-# Home Manager needs a bit of information about you and the paths it should
+  # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "jackson";
   home.homeDirectory = "/home/jackson";
@@ -48,19 +53,25 @@
   };
 
   home.shellAliases = {
-	rb = "sudo nixos-rebuild switch --flake ~/mysystem/#";
-        v = "nvim";
-        mn = "cd ~/mysystem/nixos";
-        lg = "lazygit";
+    rb = "sudo nixos-rebuild switch --flake ~/mysystem/#";
+    v = "nvim";
+    mn = "cd ~/mysystem/nixos";
+    lg = "lazygit";
   };
 
-	#  programs.bash = {
-	# enable = true;
-	# profileExtra = "[ \"$(tty)\" = \"/dev/tty1\" ] && ! pidof -s Hyprland >/dev/null 2>&1 && exec Hyprland";
-	#  };
+  #  programs.bash = {
+  # enable = true;
+  # profileExtra = "[ \"$(tty)\" = \"/dev/tty1\" ] && ! pidof -s Hyprland >/dev/null 2>&1 && exec Hyprland";
+  #  };
 
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Gruvbox-Dark";
+      package = pkgs.gruvbox-gtk-theme;
+    };
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
 }

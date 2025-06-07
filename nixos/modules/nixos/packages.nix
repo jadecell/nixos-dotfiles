@@ -1,6 +1,11 @@
-{ config, pkgs, lib, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
+  nixpkgs.config.allowUnfree = true;
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
@@ -17,7 +22,7 @@
     hyprpanel
     git
     wl-clipboard
-    fzf            
+    fzf
     inputs.zen-browser.packages."${system}".twilight
     wofi
     swaybg
@@ -25,6 +30,8 @@
     libreoffice-fresh
     rmpc
     lazygit
+    stremio
+    brave
 
     # Bash scripts
     inputs.bin.packages.${system}.extract

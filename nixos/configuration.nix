@@ -34,11 +34,12 @@
     backupFileExtension = "hm-backup";
   };
 
-
   programs.sway.enable = true;
 
   # enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }
