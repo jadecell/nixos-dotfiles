@@ -17,6 +17,7 @@
     ./modules/home-manager/zsh.nix
     ./modules/home-manager/starship.nix
     ./modules/home-manager/git.nix
+    ./modules/home-manager/gtk.nix
     ./modules/home-manager/kitty.nix
   ];
 
@@ -57,19 +58,6 @@
     v = "nvim";
     mn = "cd ~/mysystem/nixos";
     lg = "lazygit";
-  };
-
-  #  programs.bash = {
-  # enable = true;
-  # profileExtra = "[ \"$(tty)\" = \"/dev/tty1\" ] && ! pidof -s Hyprland >/dev/null 2>&1 && exec Hyprland";
-  #  };
-
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Gruvbox-Dark";
-      package = pkgs.gruvbox-gtk-theme;
-    };
   };
 
   # Let Home Manager install and manage itself.
