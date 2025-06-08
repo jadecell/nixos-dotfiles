@@ -39,7 +39,10 @@
   # enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  # fix chromium apps on wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }
