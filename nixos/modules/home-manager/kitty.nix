@@ -11,7 +11,7 @@
       confirm_os_window_close = 0;
       background_opacity = "0.9";
       enable_audio_bell = false;
-      font_family = "JetBrains Mono";
+      font_family = "JetBrains Mono Nerd Font";
       font_size = "12";
       window_padding_width = "8";
       foreground = "#ebdbb2";

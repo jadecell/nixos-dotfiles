@@ -14,15 +14,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-#    hyprland.url = "github:hyprwm/Hyprland";
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    #    hyprland.url = "github:hyprwm/Hyprland";
     nvf.url = "github:notashelf/nvf";
     zen-browser = {
-        url = "github:0xc000022070/zen-browser-flake";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     bin.url = "github:jadecell/bin";
-
   };
 
   outputs = {
@@ -32,6 +36,7 @@
     home-manager,
     nvf,
     bin,
+    niri,
     zen-browser,
     ...
   } @ inputs: let
@@ -44,12 +49,12 @@
   in {
     nixosConfigurations = {
       rune = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs system; };
+        specialArgs = {inherit inputs system;};
         modules = [
           ./nixos/configuration.nix
           nvf.nixosModules.default
 
-          {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+          {nixpkgs.overlays = [inputs.hyprpanel.overlay niri.overlays.niri];}
         ];
       };
     };

@@ -12,6 +12,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
+    # inputs.niri.nixosModules.niri
 
     ./modules/nixos/sound.nix
     ./modules/nixos/bootloader.nix
@@ -41,6 +42,10 @@
 
   # fix chromium apps on wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  # programs.niri = {
+  #   enable = true;
+  # };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 

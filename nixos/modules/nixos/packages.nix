@@ -32,6 +32,9 @@
     lazygit
     stremio
     brave
+    bat
+    zathura
+    niri-stable
 
     # Bash scripts
     inputs.bin.packages.${system}.extract
