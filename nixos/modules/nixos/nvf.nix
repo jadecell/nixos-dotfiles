@@ -51,7 +51,8 @@
         autocomplete.nvim-cmp.enable = true;
         clipboard = {
           enable = true;
-          providers.wl-copy.enable = true;
+          # providers.wl-copy.enable = true;
+          providers.xclip.enable = true;
           registers = "unnamedplus";
         };
 

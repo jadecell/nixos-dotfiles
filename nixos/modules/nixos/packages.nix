@@ -36,6 +36,7 @@
     bat
     zathura
     niri-stable
+    xclip
 
     # Bash scripts
     inputs.bin.packages.${system}.extract

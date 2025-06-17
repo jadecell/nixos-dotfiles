@@ -24,6 +24,7 @@
     ./modules/nixos/nvf.nix
     ./modules/nixos/fonts.nix
     ./modules/nixos/syncthing.nix
+    ./modules/nixos/cinnamon-desktop.nix
   ];
 
   home-manager = {
