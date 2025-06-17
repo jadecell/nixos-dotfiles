@@ -26,6 +26,7 @@
     inputs.zen-browser.packages."${system}".twilight
     wofi
     swaybg
+    swww
     waypaper
     libreoffice-fresh
     rmpc

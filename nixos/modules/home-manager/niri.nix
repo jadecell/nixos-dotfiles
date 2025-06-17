@@ -18,6 +18,10 @@
         };
       };
 
+      spawn-at-startup = [
+        {command = ["waybar"];}
+      ];
+
       layout = {
         focus-ring = {
           enable = true;
